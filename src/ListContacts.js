@@ -62,7 +62,7 @@ class ListContacts extends Component {
               ></div>
               <div className='contact-details'>
                 <p>{contact.name}</p>
-                <p>{contact.handle}</p>
+                <a target="_blank" href={`https://twitter.com/${contact.handle}`}>{contact.handle} </a>
               </div>
               <button
                 onClick={() => onDeleteContact(contact)}
