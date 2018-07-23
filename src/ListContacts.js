@@ -22,6 +22,8 @@ class ListContacts extends Component {
     const { query } = this.state
     const { contacts, onDeleteContact } = this.props
 
+    console.log(contacts)
+
     const showingContacts = query === ''
       ? contacts
       : contacts.filter((c) => (
@@ -62,7 +64,9 @@ class ListContacts extends Component {
               ></div>
               <div className='contact-details'>
                 <p>{contact.name}</p>
-                <a target="_blank" href={`https://twitter.com/${contact.handle}`}>{contact.handle} </a>
+                <p>{contact.company}</p>
+                <a href={`mailto:${contact.email}`}>{contact.email} </a>
+                <a target="_blank" href={`https://twitter.com/${contact.handle}`}>@{contact.handle} </a>
               </div>
               <button
                 onClick={() => onDeleteContact(contact)}
